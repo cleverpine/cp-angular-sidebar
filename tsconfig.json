@@ -16,6 +16,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "sidebar": [
+        "dist/sidebar/sidebar",
+        "dist/sidebar"
+      ]
+    },
     "target": "es2020",
     "module": "es2020",
     "lib": [
