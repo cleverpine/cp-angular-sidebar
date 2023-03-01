@@ -1,20 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-sidebar',
-  template: `
-    <p>
-      sidebar works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: 'sidebar-component',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
+  @Input() isShowingSideNav: boolean = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getSideNavData(data: boolean): void {
+    this.isShowingSideNav = data;
   }
 
+  hideSideNav(): void {
+    this.isShowingSideNav = false;
+  }
+
+  showSideNav() {
+    this.isShowingSideNav = this.isShowingSideNav ? false : true;
+  }
 }

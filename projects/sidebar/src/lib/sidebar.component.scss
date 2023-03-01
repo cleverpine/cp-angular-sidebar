@@ -1,0 +1,22 @@
+@import './assets/styles/colors.scss';
+
+.container {
+  height: calc(100vh - 41px);
+  background-color: rgb(212, 212, 212);
+
+  .sidebar-container {
+    width: 56px;
+    transition: width 0.1s ease;
+
+    &.expanded {
+      width: 260px;
+    }
+  }
+
+  .side-nav {
+    height: calc(100vh - 41px);
+    padding-top: 8px;
+    background-color: white;
+    border-right: solid 1px rgba(0, 0, 0, .12);
+  }
+}
