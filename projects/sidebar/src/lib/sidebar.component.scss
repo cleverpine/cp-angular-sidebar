@@ -1,22 +1,53 @@
 @import './assets/styles/colors.scss';
 
+.sidebar {
+  background-color: $nav-color;
+  color: $text-color-dark;
+  width: 260px;
+  transition: width 100ms ease;
+}
+
+.sidebar-small {
+  background-color: $nav-color;
+  color: $text-color-dark;
+  width: 56px;
+}
+
 .container {
   height: calc(100vh - 41px);
-  background-color: rgb(212, 212, 212);
+}
 
-  .sidebar-container {
-    width: 56px;
-    transition: width 0.1s ease;
+.main-content {
+  background-color: $background-color;
+  padding: 20px;
+}
 
-    &.expanded {
-      width: 260px;
-    }
+.mat-drawer-container {
+  background-color: $background-color;
+}
+
+.main-content-collapsed {
+  padding: 20px 20px 20px 224px;
+}
+
+@media screen and (max-width: 1024px) {
+  .content-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
   }
 
-  .side-nav {
-    height: calc(100vh - 41px);
-    padding-top: 8px;
-    background-color: white;
-    border-right: solid 1px rgba(0, 0, 0, .12);
+  .main-content-collapsed {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-small {
+    width: 0;
   }
 }

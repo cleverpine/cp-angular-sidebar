@@ -1,22 +1,27 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'sidebar-component',
+  selector: 'lht-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss'],
+  styleUrls: ['./sidebar.component.scss']
 })
+
 export class SidebarComponent {
-  @Input() isShowingSideNav: boolean = false;
+  @Output() expandSideNav = new EventEmitter();
 
-  getSideNavData(data: boolean): void {
-    this.isShowingSideNav = data;
+  @Output() hideSideNav = new EventEmitter();
+
+  isShowingSideNav!: boolean;
+
+  constructor() {}
+
+  toggleSideNav() {
+    this.isShowingSideNav = !this.isShowingSideNav;
+    this.expandSideNav.emit(this.isShowingSideNav);
   }
 
-  hideSideNav(): void {
+  onHideSideNav() {
     this.isShowingSideNav = false;
-  }
-
-  showSideNav() {
-    this.isShowingSideNav = this.isShowingSideNav ? false : true;
+    this.hideSideNav.emit();
   }
 }

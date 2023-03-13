@@ -1,7 +1,21 @@
-<div class="container">
-  <div class="sidebar-container" [ngClass]="!isShowingSideNav ? '' : 'expanded'">
-    <nav class="side-nav">
-      <ng-content></ng-content>
-    </nav>
-  </div>
+<div class="content" role="main">
+  <button (click)="toggleSideNav()">show nav</button>
+
+  <mat-sidenav-container class="container">
+    <mat-sidenav
+      [ngClass]="isShowingSideNav ? 'sidebar' : 'sidebar-small'"
+      mode="side"
+      [opened]="true">
+      <ng-content selector="[navItems]"></ng-content>
+    </mat-sidenav>
+    <mat-sidenav-content
+      class="main-content"
+      [ngClass]="!isShowingSideNav ? 'main-content' : 'main-content-collapsed'">
+      <div
+        class="content-overlay"
+        *ngIf="isShowingSideNav"
+        (click)="onHideSideNav()"></div>
+      <ng-content select="[main-content]"></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

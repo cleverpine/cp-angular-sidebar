@@ -2,17 +2,19 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SidebarComponent } from './sidebar.component';
 
-
+// Material
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     SidebarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatSidenavModule
   ],
   exports: [
-    SidebarComponent
+    SidebarComponent,
   ]
 })
 export class SidebarModule { }

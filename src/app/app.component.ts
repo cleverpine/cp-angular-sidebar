@@ -9,7 +9,7 @@ import { navItems } from './models/navigation-items';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  showingNav: boolean = false;
+  isShowingSideNav!: boolean;
 
   navItems: FieldConfig[] = navItems;
 
@@ -18,11 +18,11 @@ export class AppComponent {
     translate.use('en');
   }
 
-  showSideNav() {
-    this.showingNav = this.showingNav ? false : true;
+  getSideNavData(data: boolean) {
+    this.isShowingSideNav = data;
   }
 
   hideSideNav() {
-    this.showingNav = false;
+    this.isShowingSideNav = false;
   }
 }
