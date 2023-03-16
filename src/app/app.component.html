@@ -1,19 +1,11 @@
-<div class="content" role="main">
-  <button (click)="showSideNav()">show nav</button>
-
-  <mat-sidenav-container class="container">
-    <mat-sidenav [ngClass]="showingNav ? 'sidebar' : 'sidebar-small'" mode="side" [opened]="true">
-      <sidebar-component [isShowingSideNav]="showingNav">
-        <a *ngFor="let item of navItems" routerLinkActive="active" [routerLink]="[item.route]"
+<lht-sidebar (expandSideNav)="getSideNavData($event)" (hideSideNav)="hideSideNav()">
+  <div navItems>
+    <a *ngFor="let item of navItems" routerLinkActive="active" [routerLink]="[item.route]"
           class="nav-item nav-link">
           <span [ngClass]="item.cssClass"></span>
-          {{ (showingNav ? item.title : '') | translate }}
+          {{ (isShowingSideNav ? item.title : '') | translate }}
         </a>
-      </sidebar-component>
-    </mat-sidenav>
-    <mat-sidenav-content class="main-content" [ngClass]="!showingNav ? 'main-content' : 'main-content-collapsed'">
-      <div class="content-overlay" *ngIf="showingNav" (click)="hideSideNav()"></div>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
+  </div>
+
+  <router-outlet main-content></router-outlet>
+</lht-sidebar>
