@@ -11,7 +11,7 @@ export class SidebarComponent {
 
   @Output() hideSideNav = new EventEmitter();
 
-  isShowingSideNav!: boolean;
+  isShowingSideNav: boolean = false;
 
   constructor() {}
 
