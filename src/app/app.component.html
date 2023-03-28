@@ -1,4 +1,7 @@
-<lht-sidebar (expandSideNav)="getSideNavData($event)" (hideSideNav)="hideSideNav()">
+<div class="content" role="main">
+  <button (click)="toggleSideNav()">show nav</button>
+
+<lht-sidebar [expanded]="isShowingSideNav" (overlayClick)="toggleSideNav()">
   <div navItems>
     <a *ngFor="let item of navItems" routerLinkActive="active" [routerLink]="[item.route]"
           class="nav-item nav-link">
@@ -9,3 +12,4 @@
 
   <router-outlet main-content></router-outlet>
 </lht-sidebar>
+</div>

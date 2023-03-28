@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'lht-sidebar',
@@ -7,21 +7,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 
 export class SidebarComponent {
-  @Output() expandSideNav = new EventEmitter();
+  @Output() overlayClick = new EventEmitter();
 
-  @Output() hideSideNav = new EventEmitter();
+  @Input() expanded: boolean = false;
 
-  isShowingSideNav: boolean = false;
+  constructor() { }
 
-  constructor() {}
-
-  toggleSideNav() {
-    this.isShowingSideNav = !this.isShowingSideNav;
-    this.expandSideNav.emit(this.isShowingSideNav);
-  }
-
-  onHideSideNav() {
-    this.isShowingSideNav = false;
-    this.hideSideNav.emit();
+  onOverlayClick() {
+    this.overlayClick.emit();
   }
 }

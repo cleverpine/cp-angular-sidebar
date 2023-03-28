@@ -8,6 +8,7 @@ import { navItems } from './models/navigation-items';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   isShowingSideNav!: boolean;
 
@@ -18,11 +19,7 @@ export class AppComponent {
     translate.use('en');
   }
 
-  getSideNavData(data: boolean) {
-    this.isShowingSideNav = data;
-  }
-
-  hideSideNav() {
-    this.isShowingSideNav = false;
+  toggleSideNav() {
+    this.isShowingSideNav = !this.isShowingSideNav;
   }
 }

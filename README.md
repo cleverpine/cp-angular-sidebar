@@ -1,27 +1,45 @@
-# SidebarComponent
+# Sidebar component
+To use the Sidebar Component in your Angular application, follow these steps:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+## Install the Sidebar Component library using your preferred package manager (e.g. npm, yarn).
+`npm install @lht/sidebar --save`
 
-## Development server
+## Import the Sidebar Component module into your Angular application's module:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```typescript
+import { SidebarModule } from '@lht/sidebar';
 
-## Code scaffolding
+@NgModule({
+  imports: [SidebarModule],
+  // ...
+})
+export class AppModule {}
+```
+## Add the Sidebar Component to your Angular component
+```html
+<lht-sidebar
+  [expanded]="expanded"
+  (overlayClick)="onOverlayClick()"
+>
+  <!-- Your sidebar content here -->
+</lht-sidebar>
+```
+In this example, the expanded property is set to true to show the sidebar, and the (overlayClick) event is bound to the onOverlayClick() method in the component.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Handle the overlayClick event in your component's code:
+```typescript
+@Component({
+  // ...
+})
+export class MyComponent {
 
-## Build
+  expanded = true;
+  onOverlayClick() {
+    this.expanded = false;
+    // Handle the overlay click event here
+  }
+}
+```
+The `onOverlayClick()` method will be called whenever the user clicks on the overlay element, allowing you to implement custom behavior (e.g. hiding the sidebar).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+That's it! You should now have a functional sidebar in your Angular application.
