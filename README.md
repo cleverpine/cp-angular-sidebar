@@ -21,10 +21,17 @@ export class AppModule {}
   [expanded]="expanded"
   (overlayClick)="onOverlayClick()"
 >
-  <!-- Your sidebar content here -->
+    <ng-container nav-items>
+        <!-- Your nav items html here -->
+    </ng-container>
+
+    <ng-container main-content>
+        <!-- Your main content here -->
+  </ng-container>
 </lht-sidebar>
 ```
 In this example, the expanded property is set to true to show the sidebar, and the (overlayClick) event is bound to the onOverlayClick() method in the component.
+The two ng-content sections are defined with the nav-items and main-content attributes respectively. The content inside these sections will be projected into the appropriate parts of the Sidebar Component's template.
 
 Handle the overlayClick event in your component's code:
 ```typescript

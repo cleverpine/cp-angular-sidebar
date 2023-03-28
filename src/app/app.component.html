@@ -2,7 +2,7 @@
   <button (click)="toggleSideNav()">show nav</button>
 
 <lht-sidebar [expanded]="isShowingSideNav" (overlayClick)="toggleSideNav()">
-  <div navItems>
+  <div nav-items>
     <a *ngFor="let item of navItems" routerLinkActive="active" [routerLink]="[item.route]"
           class="nav-item nav-link">
           <span [ngClass]="item.cssClass"></span>
