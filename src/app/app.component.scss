@@ -23,19 +23,13 @@
   background-image: url('../assets/images/reporting-blue.svg');
 }
 
-.nav-item:hover,
 .nav-item.active {
+  background-color: $sidebar-active;
+}
+
+.nav-item:hover {
   border-color: $layout-dark-color;
-  background-color: $button-hover-color;
-  color: $text-color-white;
-
-  .icon-materials {
-    background-image: url('../assets/images/materials-white.svg');
-  }
-
-  .icon-reports {
-    background-image: url('../assets/images/reporting-white.svg');
-  }
+  background-color: $sidebar-hover;
 }
 
 .icon {
