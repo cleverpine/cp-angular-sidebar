@@ -1,16 +1,18 @@
 @import './assets/styles/colors.scss';
+@import './assets/styles/variables.scss';
 
 .sidebar {
+  width: $sidebar-width;
   background-color: $nav-color;
   color: $text-color-dark;
-  width: 260px;
   transition: width 100ms ease;
 }
 
-.sidebar-small {
+.sidebar-collapsed {
+  width: $sidebar-collapsed-width;
   background-color: $nav-color;
   color: $text-color-dark;
-  width: 56px;
+  transition: width 100ms ease;
 }
 
 .container {
@@ -18,8 +20,10 @@
 }
 
 .main-content {
+  margin-top: 20px;
+  margin-left: 0 !important;
+  padding: 0 20px 20px calc($sidebar-width + 20px);
   background-color: $background-color;
-  padding: 20px;
 }
 
 .mat-drawer-container {
@@ -27,7 +31,7 @@
 }
 
 .main-content-collapsed {
-  padding: 20px 20px 20px 224px;
+  padding: 0 20px 20px calc($sidebar-collapsed-width + 20px);
 }
 
 @media screen and (max-width: 1024px) {
@@ -40,14 +44,15 @@
     z-index: 2;
     background: rgba(0, 0, 0, 0.5);
   }
-
-  .main-content-collapsed {
-    padding: 20px;
-  }
 }
 
 @media screen and (max-width: 600px) {
-  .sidebar-small {
+  .sidebar-collapsed {
     width: 0;
+  }
+
+  .main-content,
+  .main-content-collapsed {
+    padding: 0 20px 20px 20px;
   }
 }
