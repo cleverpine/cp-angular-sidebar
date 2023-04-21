@@ -2,7 +2,8 @@
     <mat-sidenav
       [ngClass]="expanded ? 'sidebar' : 'sidebar-collapsed'"
       mode="side"
-      [opened]="true">
+      [opened]="true"
+      [disableClose]="true">
       <ng-content selector="[nav-items]"></ng-content>
     </mat-sidenav>
     <mat-sidenav-content
