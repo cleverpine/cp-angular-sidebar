@@ -1,13 +1,13 @@
 <mat-sidenav-container class="container">
     <mat-sidenav
-      [ngClass]="expanded ? 'sidebar' : 'sidebar-small'"
+      [ngClass]="expanded ? 'sidebar' : 'sidebar-collapsed'"
       mode="side"
       [opened]="true">
       <ng-content selector="[nav-items]"></ng-content>
     </mat-sidenav>
     <mat-sidenav-content
       class="main-content"
-      [ngClass]="!expanded ? 'main-content' : 'main-content-collapsed'">
+      [ngClass]="expanded ? 'main-content' : 'main-content-collapsed'">
       <div
         class="content-overlay"
         *ngIf="expanded"
