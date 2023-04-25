@@ -20,7 +20,6 @@
 }
 
 .main-content {
-  margin-top: 20px;
   margin-left: 0 !important;
   padding: 0 20px 20px calc($sidebar-width + 20px);
   background-color: $background-color;
@@ -31,7 +30,7 @@
 }
 
 .main-content-collapsed {
-  padding: 0 20px 20px calc($sidebar-collapsed-width + 20px);
+  padding: 20px 20px 20px calc($sidebar-collapsed-width + 20px);
 }
 
 @media screen and (max-width: 1024px) {
@@ -53,6 +52,6 @@
 
   .main-content,
   .main-content-collapsed {
-    padding: 0 20px 20px 20px;
+    padding: 20px;
   }
 }
