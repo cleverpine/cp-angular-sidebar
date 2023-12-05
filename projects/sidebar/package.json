@@ -1,5 +1,5 @@
 {
-  "name": "@lht/sidebar",
+  "name": "cp-lht-sidebar",
   "version": "0.0.4",
   "peerDependencies": {
     "@angular/common": "^13.3.0",
