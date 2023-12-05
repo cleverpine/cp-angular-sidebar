@@ -2,12 +2,12 @@
 To use the Sidebar Component in your Angular application, follow these steps:
 
 ## Install the Sidebar Component library using your preferred package manager (e.g. npm, yarn).
-`npm install @lht/sidebar --save`
+`npm install cp-lht-sidebar --save`
 
 ## Import the Sidebar Component module into your Angular application's module:
 
 ```typescript
-import { SidebarModule } from '@lht/sidebar';
+import { SidebarModule } from 'cp-lht-sidebar';
 
 @NgModule({
   imports: [SidebarModule],
